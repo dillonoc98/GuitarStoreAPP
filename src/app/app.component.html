@@ -1,3 +1,9 @@
+<div class="navbar">
+
+</div>
+
+<!-- text allign div bellow -->
+<div class="main-container"> 
 <h1 Style="text-align: center;">Guitar Shop</h1>
 
 <h3 Style="text-align: center;">Welcome to my guitar shop</h3>
@@ -5,16 +11,18 @@
 <br>
 
 
-<div class="main-container"> <!-- Block parent element -->
+    <!-- image added -->
 <img src="assets/image/guitar_logo.png">
 
 
 <br>
     <span class="title-center">
-My single page application
-</span>
 
+</span>
+<button mat-button [routerLink]="['/read']">View Guitars</button>
 <button mat-button [routerLink]="['/create']" color="Warn">Create</button>
-<button mat-button [routerLink]="['/read']">Read</button>
+<button mat-button [routerLink]="['/edit']" color="Warn">Edit</button>
+<button mat-button [routerLink]="['/delete']">Delete</button>
+
 </div>
 <router-outlet></router-outlet>
