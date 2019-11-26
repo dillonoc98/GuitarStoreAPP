@@ -1,0 +1,48 @@
+<mat-card>
+    <form (submit)="onAddGuitar(guitarForm)" #guitarForm="ngForm">
+      <mat-form-field>
+          <label> Guitar brand</label>
+        <input
+          matInput
+          type="text"
+          name="brand"
+          ngModel
+          required
+          #title="ngModel">
+      </mat-form-field>
+      <mat-form-field>
+          <label>Guitar type</label>
+        <textarea
+          matInput
+          name="type"
+          ngModel
+          required
+          #content="ngModel"></textarea>
+      </mat-form-field>
+      
+      <mat-form-field>
+          <label>Guitar Poster</label>
+        <textarea
+          matInput
+         rows="4"
+          name="poster"
+          ngModel
+          required
+          #content="ngModel"></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <label>Guitar Price</label>
+      <textarea
+        matInput
+        name="price"
+        ngModel
+        required
+        #content="ngModel"></textarea>
+    </mat-form-field>
+      <button
+        mat-raised-button
+        color="accent"
+        type="submit">Save Guitar</button>
+    </form>
+  </mat-card>

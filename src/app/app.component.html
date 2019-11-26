@@ -1,6 +1,20 @@
-<mat-toolbar>Guitar Store</mat-toolbar>
-<br>
 <h1 Style="text-align: center;">Guitar Shop</h1>
 
 <h3 Style="text-align: center;">Welcome to my guitar shop</h3>
-<button mat-icon-button>Click me!</button>
+
+<br>
+
+
+<div class="main-container"> <!-- Block parent element -->
+<img src="assets/image/guitar_logo.png">
+
+
+<br>
+    <span class="title-center">
+My single page application
+</span>
+
+<button mat-button [routerLink]="['/create']" color="Warn">Create</button>
+<button mat-button [routerLink]="['/read']">Read</button>
+</div>
+<router-outlet></router-outlet>

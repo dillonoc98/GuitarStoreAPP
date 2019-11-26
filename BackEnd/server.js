@@ -4,7 +4,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const PORT = 5000;
+const PORT = 2000;
 const cors = require('cors');
 const mongoose = require('mongoose');
 
@@ -17,7 +17,7 @@ const guitarSchema = new Schema({
     brand:String,
     type:String,
     poster:String,
-    price:Number
+    price:String
 })
 
 const GuitarModel =mongoose.model('guitar', guitarSchema)

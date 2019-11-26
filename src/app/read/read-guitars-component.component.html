@@ -1,0 +1,18 @@
+<mat-accordion *ngFor="let guitar of MyGuitars">
+    <mat-expansion-panel [expanded]="true" >
+    <mat-expansion-panel-header>
+    <mat-panel-title>
+    <h3> {{ guitar.brand }} </h3>
+    </mat-panel-title>
+    <mat-panel-description>
+    <h3>{{ guitar.type }}</h3>
+    </mat-panel-description>
+    </mat-expansion-panel-header>
+    <img src="{{guitar.poster}}">
+    <mat-action-row>
+  <button mat-button [routerLink]="['/edit', guitar._id]" color="primary">EDIT</button>
+    
+    <button mat-button (click)="onDelete(guitar._id)" color="warn">DELETE</button>
+    </mat-action-row>
+    </mat-expansion-panel>
+    </mat-accordion>
