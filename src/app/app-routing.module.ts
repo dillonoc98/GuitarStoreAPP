@@ -12,17 +12,16 @@ const routes: Routes = [
   },
   {
     path:'',
-    component:HomePageComponent
+    component: HomePageComponent
   },
   {
     path: 'create',
     component: CreateComponent
   },
   {
-    path:'edit/id',
+    path:'edit',   //might need to be :id
     component: EditComponent
   }
-  
 ];
 
 @NgModule({

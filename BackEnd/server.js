@@ -4,7 +4,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const PORT = 2000;
+const PORT = 4500;
 const cors = require('cors');
 const mongoose = require('mongoose');
 
@@ -18,9 +18,9 @@ const guitarSchema = new Schema({
     type:String,
     poster:String,
     price:String
-})
+});
 
-const GuitarModel =mongoose.model('guitar', guitarSchema)
+const GuitarModel =mongoose.model('guitar', guitarSchema);
 
 app.use(cors());
 app.use(bodyParser.urlencoded({  extended: true}));

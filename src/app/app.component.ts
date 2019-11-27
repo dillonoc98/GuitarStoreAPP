@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RouterLink, Route, Routes } from '@angular/router';
+import { GuitarServiceService } from '../app/Services/services.service'
 
 @Component({
   selector: 'app-root',
@@ -7,7 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'guitarShop';
-  constructor(){
-    
+ // constructor(routerLink : RouterLink,
+  //  route : Routes, guitarService : GuitarServiceService){
+
   }
-}
+

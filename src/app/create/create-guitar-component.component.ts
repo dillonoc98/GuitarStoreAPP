@@ -5,7 +5,7 @@ import { GuitarServiceService } from '../Services/services.service';
 
 @Component({
   selector: 'app-create',
-  templateUrl: './create-guitar-component.component.css',
+  templateUrl: './create-guitar-component.component.html',
   styleUrls: ['./create-guitar-component.component.css']
 })
 export class CreateComponent implements OnInit {
@@ -14,7 +14,11 @@ export class CreateComponent implements OnInit {
 
   ngOnInit() {
   }
-  myDate : Date;
+  
+
+
+
+
   onAddGuitar(form: NgForm) {
     
     if(!form.valid)
@@ -23,9 +27,6 @@ export class CreateComponent implements OnInit {
     }
 
     console.log(form.value);
-    console.log(form.value.date);
-    this.myDate = new Date(form.value.date);
-    console.log(this.myDate);
 
     this.guitarService.AddGuitarInformation(form.value.brand,
       form.value.type, form.value.poster, form.value.price).subscribe(
