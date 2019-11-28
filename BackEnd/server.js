@@ -33,7 +33,7 @@ app.use(function(req, res, next){
   "Origin, X-Requested-With, Content-Type, Accept");
   next();
   });
-
+// respond with "hello world" when a GET request is made
 app.get('/', (req, res) => {
     res.send('hello world');
   }) 
@@ -44,13 +44,7 @@ app.get('/', (req, res) => {
       res.json({guitars:data});
     })
   })
-  app.put('/api/guitars/:id',(req,res)=>{
-    console.log("edit" +req.params.id);
-    console.log(req.body);
-    GuitarModel.findByIdAndUpdate(req.params.id,req.body,{new:true},(error,data)=>{
-        res.send(data);
-    })
-  })
+
   
 app.delete('/api/guitars/:id', (req,res) =>{
     console.log(req.params.id);
@@ -93,14 +87,29 @@ app.delete('/api/guitars/:id', (req,res) =>{
     });
 res.json('data uploaded')
   })
+  //note*bellow is new 
+  app.get('/api/guitars/:id', (req, res,next) => {
+ 
+    console.log ("get request") 
+    GuitarModel.find((err,data) =>{
+        res.json({drivers:data});
+    })   
+    })
+  
 
-  app.get('/api/guitars/:id',(req,res)=>{
-      console.log(req.paramms.id);
 
-      GuitarModel.findById(req.res.id, (err, data) => {
-          res.json(data);
-      })
-  })
+
+
+
+app.put('/api/guitars/:id', (req, res)=>{
+  
+  console.log("Edit "+req.params.id);
+  console.log(req.body);
+  GuitarModel.findByIdAndUpdate(req.params.id,
+    req.body, {new:true}, (error, data)=>{
+      res.send(data);
+    })
+})
   app.listen(PORT, function () {
     console.log('Server is running on Port: ', PORT);
   });

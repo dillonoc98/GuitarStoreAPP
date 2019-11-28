@@ -13,6 +13,7 @@ export class EditComponent implements OnInit {
   constructor(private guitarService:GuitarServiceService, private router:Router,
     private route:ActivatedRoute) { }
 
+    
   ngOnInit() {
     this.guitarService.GetGuitar(this.route.snapshot.params['id']).subscribe(
       (data) =>{
