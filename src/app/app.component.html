@@ -1,7 +1,6 @@
 <!-- text allign div bellow -->
 <div class="main-container"> 
 <h1 Style="text-align: center;">Guitar Shop</h1>
-
 <h3 Style="text-align: center;">Welcome to my guitar shop</h3>
 
 <br>
@@ -15,8 +14,12 @@
     <span class="title-center">
 
 </span>
+<mat-toolbar color="black"> 
+        <mat-toolbar-row>
 <button mat-button [routerLink]="['/read']">View Guitars</button>
 <button mat-button [routerLink]="['/create']">Create</button>
+</mat-toolbar-row>
 
+</mat-toolbar>
 </div>
 <router-outlet></router-outlet>

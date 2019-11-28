@@ -1,6 +1,4 @@
-<p>
-  Read Working
-</p>
+<!--output for read-->
 <mat-accordion *ngFor="let guitar of MyGuitars">
     <mat-expansion-panel [expanded]="true" >
     <mat-expansion-panel-header>
@@ -10,6 +8,9 @@
     <mat-panel-description>
     <h3>{{ guitar.type }}</h3>
     </mat-panel-description>
+    <mat-panel-description>
+        <h3>{{ guitar.price }}</h3>
+      </mat-panel-description>
     </mat-expansion-panel-header>
     <img src="{{guitar.poster}}">
     <mat-action-row>

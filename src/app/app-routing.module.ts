@@ -19,7 +19,7 @@ const routes: Routes = [
     component: CreateComponent
   },
   {
-    path:'edit',   //might need to be :id
+    path:'edit/:id',   //might need to be :id
     component: EditComponent
   }
 ];

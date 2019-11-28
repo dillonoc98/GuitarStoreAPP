@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GuitarServiceService } from '../Services/services.service';
 import {Router, ActivatedRoute} from '@angular/router';
 
+
 @Component({
   selector: 'app-read',
   templateUrl: './read-guitars-component.component.html',
@@ -11,6 +12,7 @@ export class ReadGuitarsComponentComponent implements OnInit {
   MyGuitars: any = [];
   constructor(private guitarService: GuitarServiceService) { }
 
+  
 
   ngOnInit() {
     this.guitarService.GetGuitarInformation().subscribe((data) => {

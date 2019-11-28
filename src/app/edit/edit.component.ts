@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import {Router, ActivatedRoute} from '@angular/router';
-import {GuitarServiceService} from '../Services/services.service'
+import {GuitarServiceService} from '../Services/services.service';
 
 @Component({
   selector: 'app-edit',

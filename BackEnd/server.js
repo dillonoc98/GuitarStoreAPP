@@ -1,12 +1,11 @@
-//server 
-
 
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const PORT = 4500;
+const PORT = 4000;
 const cors = require('cors');
 const mongoose = require('mongoose');
+
 
 const mongoDB = 'mongodb+srv://Admin:Test123@cluster0-tjima.mongodb.net/test?retryWrites=true&w=majority'
 mongoose.connect(mongoDB, {useNewUrlParser:true});
@@ -79,7 +78,7 @@ app.delete('/api/guitars/:id', (req,res) =>{
     console.log(req.body.poster);
     console.log(req.body.price);
 
-    GuitarModel.Create({
+    GuitarModel.create({
         brand: req.body.brand,
         type: req.body.type,
         poster: req.body.poster,
@@ -98,3 +97,4 @@ res.json('data uploaded')
   app.listen(PORT, function () {
     console.log('Server is running on Port: ', PORT);
   });
+  
