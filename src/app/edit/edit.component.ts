@@ -24,7 +24,7 @@ export class EditComponent implements OnInit {
   }
   // recheck later *** bellow.. brand might be _id
   onEditGuitar(form:NgForm){
-    console.log(form.value._id);
+    console.log(form.value.brand);
     this.guitarService.UpdateGuitar(this.guitar._id, form.value.brand, form.value.type,
       form.value.poster, form.value.price).subscribe();
   }

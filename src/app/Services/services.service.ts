@@ -27,7 +27,7 @@ export class GuitarServiceService {
     return this.http.get('http://localhost:4000/api/guitars/'+id);
   }
 
-  UpdateGuitar(id:string,brand:String,type:string, poster:string, price:String):Observable<any>{
+  UpdateGuitar(id:String,brand:String,type:String, poster:String, price:String):Observable<any>{
     const guitar:Guitar = {brand:brand, type:type, poster:poster, price:price};
     console.log("Edit"+id);
     return this.http.put('http://localhost:4000/api/guitars/'+id, guitar);

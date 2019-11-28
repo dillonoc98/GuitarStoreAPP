@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const PORT = 4000;
 const cors = require('cors');
 const mongoose = require('mongoose');
+const path = require('path');
 
 
 const mongoDB = 'mongodb+srv://Admin:Test123@cluster0-tjima.mongodb.net/test?retryWrites=true&w=majority'
@@ -19,7 +20,7 @@ const guitarSchema = new Schema({
     price:String
 });
 
-const GuitarModel =mongoose.model('guitar', guitarSchema);
+const GuitarModel = mongoose.model('guitar', guitarSchema);
 
 app.use(cors());
 app.use(bodyParser.urlencoded({  extended: true}));
@@ -43,7 +44,13 @@ app.get('/', (req, res) => {
       res.json({guitars:data});
     })
   })
-
+  app.put('/api/guitars/:id',(req,res)=>{
+    console.log("edit" +req.params.id);
+    console.log(req.body);
+    GuitarModel.findByIdAndUpdate(req.params.id,req.body,{new:true},(error,data)=>{
+        res.send(data);
+    })
+  })
   
 app.delete('/api/guitars/:id', (req,res) =>{
     console.log(req.params.id);
