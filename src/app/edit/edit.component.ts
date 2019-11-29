@@ -13,7 +13,7 @@ export class EditComponent implements OnInit {
   constructor(private guitarService:GuitarServiceService, private router:Router,
     private route:ActivatedRoute) { }
 
-    
+
   ngOnInit() {
     this.guitarService.GetGuitar(this.route.snapshot.params['id']).subscribe(
       (data) =>{
@@ -25,7 +25,7 @@ export class EditComponent implements OnInit {
   }
   // recheck later *** bellow.. brand might be _id
   onEditGuitar(form:NgForm){
-    console.log(form.value.brand);
+    console.log(form.value.title);
     this.guitarService.UpdateGuitar(this.guitar._id, form.value.brand, form.value.type,
       form.value.poster, form.value.price).subscribe();
   }

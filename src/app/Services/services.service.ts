@@ -23,16 +23,15 @@ export class GuitarServiceService {
     return this.http.delete('http://localhost:4000/api/guitars/'+id);
   }
 
+
   GetGuitar(id:String):Observable<any>{
     return this.http.get('http://localhost:4000/api/guitars/'+id);
   }
 
-  UpdateGuitar(id:String,brand:String,type:String, poster:String, price:String):Observable<any>{
+  UpdateGuitar(id:String,brand:String, type:String, poster:String, price:String):Observable<any>{
+    console.log("Edit "+ brand);
+    console.log("Dillon test");
     const guitar:Guitar = {brand:brand, type:type, poster:poster, price:price};
-    console.log("Edit"+id);
     return this.http.put('http://localhost:4000/api/guitars/'+id, guitar);
   }
-
-
-
 }

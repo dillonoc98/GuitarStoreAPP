@@ -1,12 +1,13 @@
 
 <mat-card>
-    <form (submit)="onEditGuitar(guitarForm)" #guitarForm="ngForm">
-      <mat-form-field>
+  <form (submit)="onEditGuitar(driverForm)" #guitarForm="ngForm">
+    <mat-form-field>
           <label> Guitar Brand</label>
+          <h3> {{ guitar.brand }} </h3>
         <input
           matInput
           type="text"
-          name="Brand"
+          name="brand"
           ngModel={{guitar.brand}}
           required
           #title="ngModel">
