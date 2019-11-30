@@ -21,9 +21,9 @@ export class CreateComponent implements OnInit {
     {
       return;
     }
-
+//log for test
     console.log(form.value);
-
+//add object guitar 
     this.guitarService.AddGuitarInformation(form.value.brand,
       form.value.type, form.value.poster, form.value.price).subscribe(
         ()=>{

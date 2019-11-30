@@ -13,14 +13,14 @@ export class ReadGuitarsComponentComponent implements OnInit {
   constructor(private guitarService: GuitarServiceService) { }
 
   
-
+//gets guitars when page starts up
   ngOnInit() {
     this.guitarService.GetGuitarInformation().subscribe((data) => {
       this.MyGuitars = data.guitars;
       console.log(this.MyGuitars);
     })
   }
-  
+  //deletes guitar by id
   onDelete(id:String){
     console.log("Deleting Guitars with id: "+id);
     this.guitarService.DeleteGuitar(id).subscribe(

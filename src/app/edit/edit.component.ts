@@ -10,12 +10,13 @@ import {GuitarServiceService} from '../Services/services.service';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
+  //declaration
   guitar:any=[];
 
   constructor(private guitarService:GuitarServiceService, private router:Router,
     private route:ActivatedRoute) { }
 
-
+//gets a guitar by id
     ngOnInit() {
       this.guitarService.GetGuitar(this.route.snapshot.params['id']).subscribe((data)=>{
           this.guitar = data;
@@ -25,7 +26,7 @@ export class EditComponent implements OnInit {
   }//end of oninit
   
 
-
+//edit guitar by id
   onEditGuitar(form:NgForm){
     console.log(form.value);
     this.guitarService.UpdateGuitar(this.guitar._id, form.value.brand, form.value.type,

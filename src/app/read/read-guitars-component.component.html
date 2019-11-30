@@ -14,9 +14,9 @@
     </mat-expansion-panel-header>
     <img Style="width:30%;" src="{{guitar.poster}}">
     <mat-action-row>
-  <button mat-button [routerLink]="['/edit', guitar._id]" color="primary">EDIT</button>
-    
-    <button mat-button (click)="onDelete(guitar._id)" color="warn">DELETE</button>
+  <button mat-button [routerLink]="['/edit', guitar._id]" color="white">EDIT</button>
+    <!--buttons to delete and edit guitar-->
+    <button mat-button (click)="onDelete(guitar._id)" color="white">DELETE</button>
     </mat-action-row>
    </mat-expansion-panel>
 </mat-accordion>

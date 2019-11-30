@@ -4,7 +4,7 @@ import {CreateComponent} from './create/create-guitar-component.component';
 import { ReadGuitarsComponentComponent } from './read/read-guitars-component.component';
 import { HomePageComponent } from 'src/app/home-page/home-page.component';
 import { EditComponent } from './edit/edit.component';
-
+//paths to components
 const routes: Routes = [
   {
     path: 'read',
