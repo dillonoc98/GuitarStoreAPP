@@ -7,6 +7,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
 
+//string from mongoDB with username and password to gain access
 
 const mongoDB = 'mongodb+srv://Admin:Test123@cluster0-tjima.mongodb.net/test?retryWrites=true&w=majority'
 mongoose.connect(mongoDB, {useNewUrlParser:true});
@@ -22,13 +23,16 @@ const guitarSchema = new Schema({
 
 const GuitarModel = mongoose.model('guitar', guitarSchema);
 
+//use cors to manage cross origin requests
+//body parser is used as a middleware module to extract the body of an incoming request
 app.use(cors());
-app.use(bodyParser.urlencoded({  extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(function(req, res, next){
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+//function for http request, response & callback
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   res.header("Access-Control-Allow-Headers",
   "Origin, X-Requested-With, Content-Type, Accept");
   next();
@@ -69,7 +73,7 @@ app.delete('/api/guitars/:id', (req,res) =>{
     }
   })
 
-
+//adds guitar to db
   app.post('/api/guitars', (req,res) =>{
 
     console.log('post Sucessfull');
@@ -87,27 +91,24 @@ app.delete('/api/guitars/:id', (req,res) =>{
     });
 res.json('data uploaded')
   })
-  //note*bellow is new 
-  app.get('/api/guitars/:id', (req, res,next) => {
- 
-    console.log ("get request") 
-    GuitarModel.find((err,data) =>{
-        res.json({drivers:data});
-    })   
-    })
   
-
-
-
+  //note*bellow is new 
+  app.get('/api/guitars/:id', (req,res)=>{
+    console.log(req.params.id);
+    GuitarModel.findById(req.params.id, (err, data)=>{
+      res.json(data);
+      console.log("New Get on server log");
+    })
+  });
+  
 
 
 app.put('/api/guitars/:id', (req, res)=>{
   
-  console.log("Edit "+req.params.id);
-  console.log(req.body);
-  GuitarModel.findByIdAndUpdate(req.params.id,
-    req.body, {new:true}, (error, data)=>{
-      res.send(data);
+  console.log("Edit "+req.res);
+  console.log(req.params.id);
+  GuitarModel.findByIdAndUpdate(req.params.id,req.body,{new:true},(error,data)=>{
+    res.send(data);
     })
 })
   app.listen(PORT, function () {

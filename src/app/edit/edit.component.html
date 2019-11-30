@@ -1,47 +1,50 @@
 
 <mat-card>
-  <form (submit)="onEditGuitar(driverForm)" #guitarForm="ngForm">
+  <form (submit)="onEditGuitar(guitarForm)" #guitarForm="ngForm">
     <mat-form-field>
-          <label> Guitar Brand</label>
-          <h3> {{ guitar.brand }} </h3>
+          <label> Edit Guitar Brand</label>
+          <br>
         <input
           matInput
           type="text"
           name="brand"
           ngModel={{guitar.brand}}
           required
-          #title="ngModel">
+          #brand="ngModel">
       </mat-form-field>
       <br>
       <mat-form-field>
-          <label>Guitar Type</label>
+          <label>Edit Guitar Type</label>
+          <br>
         <textarea
           matInput
           name="type"
           ngModel={{guitar.type}}
           required
-          #content="ngModel"></textarea>
+          #type="ngModel"></textarea>
       </mat-form-field>
       <br>
       <mat-form-field>
-          <label>Guitar Poster</label>
+          <label>Edit Guitar Poster</label>
+          <br>
         <textarea
           matInput
          rows="4"
           name="poster"
           ngModel={{guitar.poster}}
           required
-          #content="ngModel"></textarea>
+          #poster="ngModel"></textarea>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <label>Guitar Price</label>
+        <label>Edit Guitar Price</label>
+        <br>
       <textarea
         matInput
         name="price"
         ngModel={{guitar.price}}
         required
-        #content="ngModel"></textarea>
+        #price="ngModel"></textarea>
     </mat-form-field>
     <br>
       <button
