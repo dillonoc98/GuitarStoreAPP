@@ -12,7 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 4. From the home mage there will be a 'View all guitats' tab and a 'Create Guitar' tab.
 
-* Create guitar lets you add a guitar object. Brand, Type, Poster and Price must be entered into the form. (note that the poster must be an image URL).
+* Create guitar lets you add a guitar object. Brand, Type, Poster and Price should be entered into the form before clicking submit button. (note that the poster should be an image URL).
 
 * View guitars lets you see all the guitars that are stored on the MongoDB.
 
@@ -50,10 +50,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ![](https://github.com/dillonoc98/GuitarStoreAPP/blob/master/src/assets/image/edit.JPG?raw=true "Title")
 
 
-6. The Application both Client and Server must be structured in standard, organised
+6. The application both Client and Server must be structured in standard, organised
 and consistent fashion.
 
-* I wanted to stick to a black and white color schemme. Everything is nicely placed and easy to navigate.
+* I wanted to stick to a black and white color schemme. Everything is nicely placed and easy to navigate. I also added a logo that is centered on the top of the page with text.
 
 
 7. There must be a comment for each non-obvious line of code you add to the project.
